@@ -1,0 +1,597 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Poppins,sans-serif;
+
+background:#FEFCFB;
+
+color:#020202;
+
+}
+
+
+/* HEADER */
+
+header{
+
+width:90%;
+
+margin:25px auto;
+
+padding:20px 50px;
+
+background:white;
+
+border-radius:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+position:sticky;
+
+top:20px;
+
+z-index:1000;
+
+}
+
+.logo h2{
+
+font-size:32px;
+
+color:#001F54;
+
+}
+
+.logo span{
+
+color:#A20000;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:40px;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+font-weight:500;
+
+color:#001F54;
+
+transition:.3s;
+
+padding-bottom:5px;
+
+}
+
+nav a:hover{
+
+color:#A20000;
+
+border-bottom:3px solid #1CCAFF;
+
+}
+
+
+/* HERO */
+
+.hero{
+
+width:90%;
+
+height:650px;
+
+margin:auto;
+
+border-radius:20px;
+
+overflow:hidden;
+
+background-image:linear-gradient(rgba(0,31,84,.55),rgba(2,2,2,.45)),
+url("proa.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+.hero-texto{
+
+color:white;
+
+width:70%;
+
+}
+
+.hero h1{
+
+font-size:65px;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+margin-bottom:35px;
+
+line-height:1.7;
+
+}
+
+.boton{
+
+background:#A20000;
+
+padding:18px 40px;
+
+border-radius:40px;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.boton:hover{
+
+background:#1CCAFF;
+
+color:#001F54;
+
+}
+
+
+/* CONTENIDO */
+
+.contenedor{
+
+width:90%;
+
+margin:80px auto;
+
+text-align:center;
+
+}
+
+.contenedor h2{
+
+font-size:42px;
+
+color:#001F54;
+
+margin-bottom:50px;
+
+}
+
+.tarjetas{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+border-top:6px solid #1CCAFF;
+
+}
+
+.card h3{
+
+color:#A20000;
+
+margin-bottom:15px;
+
+font-size:28px;
+
+}
+
+.card p{
+
+line-height:1.8;
+
+color:#444;
+
+}
+
+
+/* INFORMACIÓN */
+
+.info{
+
+width:80%;
+
+margin:60px auto;
+
+text-align:center;
+
+}
+
+.info h2{
+
+font-size:40px;
+
+color:#001F54;
+
+margin-bottom:20px;
+
+}
+
+.info p{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#555;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+margin-top:80px;
+
+background:#001F54;
+
+color:white;
+
+padding:30px;
+
+text-align:center;
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+header{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+.hero{
+
+height:500px;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+width:100%;
+
+}
+
+.tarjetas{
+
+grid-template-columns:1fr;
+
+}
+
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.texto-logo{
+    display:flex;
+    flex-direction:column;
+}
+
+.texto-logo h2{
+    color:#001F54;
+    font-size:30px;
+    margin:0;
+}
+
+.texto-logo span{
+    color:#A20000;
+    font-size:16px;
+    font-weight:500;
+}
+
+/* ================== PLANO ================== */
+
+.plano{
+    width:90%;
+    max-width:1500px;
+    margin:80px auto;
+    text-align:center;
+}
+
+.plano h2{
+    color:#001F54;
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.plano p{
+    color:#555;
+    font-size:18px;
+    margin-bottom:35px;
+    line-height:1.8;
+}
+
+.plano-contenedor{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+.plano-contenedor:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.20);
+
+}
+
+.plano-contenedor img{
+
+    width:100%;
+
+    border-radius:15px;
+
+    display:block;
+
+}
+
+@media(max-width:900px){
+
+.plano h2{
+
+    font-size:32px;
+
+}
+
+.plano p{
+
+    font-size:16px;
+
+}
+
+}
+.espacios{
+    width:90%;
+    margin:80px auto;
+    text-align:center;
+}
+
+.espacios h2{
+    font-size:42px;
+    color:#001F54;
+    margin-bottom:40px;
+}
+
+.contenedor-espacios{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.espacio{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.espacio:hover{
+    transform:translateY(-8px);
+    border-top:5px solid #1CCAFF;
+}
+
+.espacio h3{
+    color:#A20000;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.espacio p{
+    color:#555;
+    line-height:1.7;
+}
+/*=================== MATERIAS ===================*/
+
+.materias{
+    width:90%;
+    max-width:1400px;
+    margin:80px auto;
+}
+
+.materias h2{
+    text-align:center;
+    color:#001F54;
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.materias p{
+    text-align:center;
+    color:#555;
+    font-size:18px;
+    line-height:1.8;
+    max-width:900px;
+    margin:0 auto 40px;
+}
+
+/* TABLA */
+
+.tabla{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#001F54;
+}
+
+thead th{
+    color:white;
+    padding:20px;
+    font-size:18px;
+    font-weight:600;
+}
+
+tbody td{
+    padding:18px;
+    border-bottom:1px solid #e8e8e8;
+    color:#444;
+    font-size:16px;
+    line-height:1.7;
+}
+
+tbody tr:nth-child(even){
+    background:#f9f9f9;
+}
+
+tbody tr:hover{
+    background:#E7F9FF;
+    transition:.3s;
+}
+
+/* Primera columna */
+
+tbody td:first-child{
+    color:#A20000;
+    font-weight:600;
+}
+
+/* Segunda columna */
+
+tbody td:nth-child(2){
+    color:#001F54;
+    font-weight:600;
+    text-align:center;
+    width:150px;
+}
+
+/* Tercera columna */
+
+tbody td:last-child{
+    text-align:left;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .tabla{
+        overflow-x:auto;
+    }
+
+    table{
+        min-width:850px;
+    }
+
+    .materias h2{
+        font-size:34px;
+    }
+
+}

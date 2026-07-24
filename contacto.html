@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PROA Despeñaderos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <img src="logop.jpg" alt="Logo PROA">
+
+        <div class="texto-logo">
+            <h2>PROA</h2>
+            <span>Despeñaderos</span>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="institucional.html">Institucional</a></li>
+            <li><a href="paicor.html">PAICOR</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+
+        </ul>
+
+    </nav>
+    <h2>Contacto</h2>
+</header>
+<body>
+    <style>/* SECCIÓN CONTACTO */
+
+.contacto{
+
+    width:100%;
+
+    padding:80px 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#FEFCFB;
+
+}
+
+
+/* FORMULARIO */
+
+.formulario{
+
+    width:420px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+
+/* CÍRCULOS */
+
+.circulo{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(40px);
+
+    opacity:.45;
+
+}
+
+.rojo{
+
+    width:220px;
+
+    height:220px;
+
+    background:#A20000;
+
+    top:-90px;
+
+    left:-80px;
+
+}
+
+.turquesa{
+
+    width:220px;
+
+    height:220px;
+
+    background:#1CCAFF;
+
+    bottom:-90px;
+
+    right:-80px;
+
+}
+
+
+/* TÍTULO */
+
+.formulario h2{
+
+    color:#001F54;
+
+    margin-bottom:30px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* CAMPOS */
+
+.grupo{
+
+    margin-bottom:20px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.grupo label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#001F54;
+
+    font-weight:600;
+
+}
+
+.grupo input,
+
+.grupo textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border:2px solid #d9d9d9;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+    font-family:Poppins,sans-serif;
+
+}
+
+.grupo textarea{
+
+    resize:none;
+
+    height:140px;
+
+}
+
+.grupo input:focus,
+
+.grupo textarea:focus{
+
+    border-color:#1CCAFF;
+
+}
+
+
+/* BOTÓN */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(90deg,#A20000,#1CCAFF);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.20);
+
+}</style>
+    <section class="contacto">
+
+    <div class="formulario">
+
+        <span class="circulo rojo"></span>
+        <span class="circulo turquesa"></span>
+
+        <h2>Contacto</h2>
+
+        <form>
+
+            <div class="grupo">
+
+                <label>Nombre</label>
+
+                <input type="text" placeholder="Ingrese su nombre">
+
+            </div>
+
+            <div class="grupo">
+
+                <label>Teléfono</label>
+
+                <input type="tel" placeholder="Ingrese su teléfono">
+
+            </div>
+
+            <div class="grupo">
+
+                <label>Consulta</label>
+
+                <textarea placeholder="Escriba su consulta"></textarea>
+
+            </div>
+
+            <button type="submit">
+                Enviar Consulta
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+</body>
+</html>
