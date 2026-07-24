@@ -497,7 +497,10 @@ grid-template-columns:1fr;
     max-width:1400px;
     margin:80px auto;
 }
+h3{
+    color:#A20000;
 
+    }
 .materias h2{
     text-align:center;
     color:#001F54;
@@ -515,83 +518,84 @@ grid-template-columns:1fr;
 }
 
 /* TABLA */
-
 .tabla{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
 }
 
 table{
-    width:100%;
-    border-collapse:collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 thead{
-    background:#001F54;
+    background: linear-gradient(90deg,#0097A7,#006D77);
 }
 
 thead th{
-    color:white;
-    padding:20px;
-    font-size:18px;
-    font-weight:600;
+    color: white;
+    padding: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
 }
 
 tbody td{
-    padding:18px;
-    border-bottom:1px solid #e8e8e8;
-    color:#444;
-    font-size:16px;
-    line-height:1.7;
+    padding: 12px 15px;
+    font-size: 15px;
+    color: #444;
+    border-bottom: 1px solid #ececec;
+    line-height: 1.5;
 }
 
 tbody tr:nth-child(even){
-    background:#f9f9f9;
+    background: #f7fbfc;
 }
 
 tbody tr:hover{
-    background:#E7F9FF;
-    transition:.3s;
+    background: #dff7fa;
+    transition: .25s;
 }
 
-/* Primera columna */
-
+/* Materia */
 tbody td:first-child{
-    color:#A20000;
-    font-weight:600;
+    width: 260px;
+    font-weight: bold;
+    color: #00838F;
 }
 
-/* Segunda columna */
-
+/* Año */
 tbody td:nth-child(2){
-    color:#001F54;
-    font-weight:600;
-    text-align:center;
-    width:150px;
+    width: 90px;
+    text-align: center;
+    font-weight: bold;
+    color: #C62828;
 }
 
-/* Tercera columna */
-
+/* Descripción */
 tbody td:last-child{
-    text-align:left;
+    color: #555;
 }
-
-/* Responsive */
 
 @media(max-width:900px){
 
     .tabla{
         overflow-x:auto;
+        border-radius:12px;
     }
 
     table{
-        min-width:850px;
+        min-width:750px;
     }
 
-    .materias h2{
-        font-size:34px;
+    thead th,
+    tbody td{
+        padding:10px 12px;
+        font-size:14px;
     }
 
 }
