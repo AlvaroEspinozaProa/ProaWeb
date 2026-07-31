@@ -143,160 +143,179 @@ function crearDesplegable(idBoton, idContenido, contenidoHTML){
     });
 
 }
-//1año
+//1 AÑO
 crearDesplegable("mostrar1","contenido1",`
 <table>
 <tr><th>Materia</th><th>Descripción</th></tr>
 
 <tr>
-<td>Taller de Inglés Aplicado</td>
-<td>Desarrolla habilidades de comunicación en inglés aplicadas a la tecnología.</td>
+<td>Sistemas Operativos</td>
+<td>Aprende el funcionamiento de la computadora, los sistemas operativos y las aplicaciones.</td>
 </tr>
 
 <tr>
 <td>Entornos Digitales</td>
-<td>Introduce al uso de herramientas digitales.</td>
+<td>Introduce el pensamiento computacional y la programación con Pilas Bloques y mBlock.</td>
 </tr>
 
 <tr>
-<td>Sistemas Operativos</td>
-<td>Funcionamiento básico de los sistemas operativos.</td>
+<td>Software de Apps</td>
+<td>Conoce el uso y las funciones de diferentes aplicaciones informáticas.</td>
 </tr>
 
 </table>
 `);
 
-//2año
+
+//2 AÑO
 crearDesplegable("mostrar2","contenido2",`
 <table>
 <tr><th>Materia</th><th>Descripción</th></tr>
 
 <tr>
-<td>Taller de Inglés Aplicado</td>
-<td>Continúa fortaleciendo el inglés técnico.</td>
-</tr>
-
-<tr>
-<td>Entornos Digitales</td>
-<td>Profundiza el manejo de herramientas digitales.</td>
-</tr>
-
-<tr>
-<td>Sistemas Operativos</td>
-<td>Instalación y configuración de sistemas operativos.</td>
-</tr>
-
-<tr>
 <td>Algoritmos y Programación</td>
-<td>Desarrolla el pensamiento lógico mediante algoritmos.</td>
+<td>Aprende programación con PSeInt, utilizando funciones y resolución de problemas.</td>
+</tr>
+
+<tr>
+<td>Estructura y Almacenamiento de Datos</td>
+<td>Introducción a MySQL para crear y organizar bases de datos.</td>
+</tr>
+
+<tr>
+<td>Club de Ciencias</td>
+<td>Programación de placas Arduino con mBlock para desarrollar proyectos tecnológicos.</td>
 </tr>
 
 </table>
 `);
 
 
-//3año
-
-
+//3 AÑO
 crearDesplegable("mostrar3","contenido3",`
 <table>
 <tr><th>Materia</th><th>Descripción</th></tr>
 
 <tr>
+<td>Estructura y Almacenamiento de Datos II</td>
+<td>Diseño y administración de bases de datos utilizando MySQL.</td>
+</tr>
+
+<tr>
 <td>Taller de Inglés Aplicado</td>
-<td>Aplica el inglés en proyectos y documentación técnica.</td>
+<td>Uso del inglés en tecnología mediante proyectos y presentaciones.</td>
 </tr>
 
 <tr>
 <td>Programación I</td>
-<td>Introducción a la programación.</td>
+<td>Introducción a Python: variables, funciones, ciclos, archivos y lógica de programación.</td>
 </tr>
 
 <tr>
-<td>Estructura y Base de Datos</td>
-<td>Organización y almacenamiento de datos.</td>
+<td>Club de Ciencias</td>
+<td>Desarrollo de proyectos con Arduino, sensores y componentes electrónicos.</td>
 </tr>
 
 </table>
 `);
-//4año
+
+
+//4 AÑO
 crearDesplegable("mostrar4","contenido4",`
 <table>
 <tr><th>Materia</th><th>Descripción</th></tr>
 
 <tr>
-<td>Taller de Inglés Aplicado</td>
-<td>Perfecciona el inglés técnico.</td>
-</tr>
-
-<tr>
 <td>Programación II</td>
-<td>Proyectos de programación más complejos.</td>
+<td>Programación en Python y desarrollo de proyectos prácticos.</td>
 </tr>
 
 <tr>
-<td>Estructura y Base de Datos</td>
-<td>Diseño y administración de bases de datos.</td>
+<td>Estructura y Almacenamiento de Datos III</td>
+<td>Creación y administración de bases de datos con MySQL.</td>
 </tr>
 
 <tr>
 <td>Diseño de Interfaces</td>
-<td>Creación de interfaces modernas y accesibles.</td>
-</tr>
-
-<tr>
-<td>Club de Ciencias</td>
-<td>Investigación y desarrollo de proyectos científicos.</td>
+<td>Diseño de páginas web atractivas, funcionales y fáciles de usar.</td>
 </tr>
 
 </table>
 `);
-//5año
+
+
+//5 AÑO
 crearDesplegable("mostrar5","contenido5",`
 <table>
 <tr><th>Materia</th><th>Descripción</th></tr>
 
 <tr>
-<td>Taller de Inglés Aplicado</td>
-<td>Comunicación técnica y profesional.</td>
+<td>Robótica</td>
+<td>Diseño y programación de robots con Arduino, mBlock y Tinkercad.</td>
 </tr>
 
 <tr>
 <td>Programación III</td>
-<td>Desarrollo de aplicaciones utilizando conceptos avanzados.</td>
+<td>Desarrollo de páginas web y aplicaciones utilizando Visual Studio Code.</td>
 </tr>
 
 <tr>
-<td>Robótica</td>
-<td>Diseño y programación de robots.</td>
+<td>Taller de Inglés Aplicado</td>
+<td>Aprendizaje del vocabulario técnico e informático en inglés.</td>
+</tr>
+
+<tr>
+<td>Club de Ciencias</td>
+<td>Diseño e impresión de modelos 3D para proyectos tecnológicos.</td>
 </tr>
 
 </table>
 `);
-//6año
+
+
+//6 AÑO
 crearDesplegable("mostrar6","contenido6",`
 <table>
 <tr><th>Materia</th><th>Descripción</th></tr>
 
 <tr>
-<td>Taller de Inglés Aplicado</td>
-<td>Aplicación del inglés en ámbitos profesionales.</td>
+<td>Desarrollo de Aplicaciones Web y Microservicios</td>
+<td>Creación de aplicaciones web utilizando arquitectura de microservicios.</td>
 </tr>
 
 <tr>
-<td>Programación IV</td>
-<td>Desarrollo de proyectos completos de software.</td>
+<td>Diseño y Planificación</td>
+<td>Planificación, documentación y organización de proyectos de software.</td>
 </tr>
 
 <tr>
 <td>Testing Digital</td>
-<td>Evaluación y aseguramiento de la calidad del software.</td>
+<td>Pruebas y control de calidad para garantizar el correcto funcionamiento del software.</td>
 </tr>
 
 <tr>
-<td>Desarrollo Web</td>
-<td>Creación de sitios y aplicaciones web.</td>
+<td>Gestión de Microservicios</td>
+<td>Uso de Docker y Kubernetes para desplegar y administrar aplicaciones.</td>
+</tr>
+
+<tr>
+<td>Formación para la Vida y el Trabajo</td>
+<td>Realización de pasantías y elaboración de una tesina basada en la experiencia laboral.</td>
 </tr>
 
 </table>
 `);
+
+
+
+
+//contacto
+
+
+
+//paicor
+
+
+
+
+
