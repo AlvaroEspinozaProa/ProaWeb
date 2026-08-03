@@ -364,31 +364,26 @@ padding:35px;
 
     <p>Complete el formulario y responderemos a la brevedad.</p>
 
-    <form id="formContacto">
+    <form id="formContacto" action="/enviar" method="POST">
 
         <div class="grupo">
             <label>Nombre</label>
-            <input type="text" placeholder="Ingrese su nombre" required>
+            <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
         </div>
 
         <div class="grupo">
             <label>Correo electrónico</label>
-            <input type="email" placeholder="Ingrese su correo" required>
-        </div>
-
-        <div class="grupo">
-            <label>Teléfono</label>
-            <input type="number" placeholder="Ingrese su teléfono" required>
+            <input type="email"  name="correo" placeholder="Ingrese su correo" required>
         </div>
 
         <div class="grupo">
             <label>Consulta</label>
-            <textarea placeholder="Escriba su consulta" required></textarea>
+            <textarea name="mensaje" placeholder="Escriba su consulta" required></textarea>
         </div>
 
         <button type="submit">Enviar Consulta</button>
 
-        <p id="mensaje" class="mensaje"></p>
+        
 
     </form>
 
