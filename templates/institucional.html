@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proa Web</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+<style>/*========================== AUTORIDADES ==========================*/
+ .autoridades{ 
+    width:90%;
+     margin:80px auto; 
+     text-align:center; 
+    } 
+ .autoridades h2{ 
+    font-size:42px; 
+    color:#001F54; 
+    margin-bottom:50px; 
+} 
+ .contenedor-autoridades{ 
+    display:flex; 
+    justify-content:center;
+     flex-wrap:wrap; gap:40px;
+     }
+  .card-autoridad{ 
+    position:relative; 
+    width:250px;
+    height:420px;
+     background:white; 
+     border-radius:20px; 
+     overflow:hidden; 
+     box-shadow:0 15px 35px rgba(0,0,0,.15); transition:.4s; } 
+
+    .card-autoridad:hover{ transform:translateY(-10px); } 
+
+    .fondo-rojo{ position:absolute; width:120px; height:100%; background:#3a7f88; left:50%; transform:translateX(-50%); opacity:.9; }
+
+    .fondo-rojo::after{ content:"PROA"; position:absolute; top:30px; left:50%; transform:translateX(-50%) rotate(90deg); color:rgba(255,255,255,.18); font-size:45px; font-weight:700; letter-spacing:3px; } 
+
+    .card-autoridad img{ position:absolute; bottom:70px; left:50%; transform:translateX(-50%); width:210px; height:280px; object-fit:cover; border-radius:15px; }
+
+    .info{ position:absolute; bottom:0; width:100%; background:linear-gradient(to top,#375057,#43c7f0,transparent); color:rgb(0, 0, 0); padding:25px 15px; } 
+
+    .info h3{ font-size:24px; margin-bottom:5px; } 
+
+    .info p{ font-size:16px; opacity:.9; }
+
+     /* Responsive */
+      
+    @media(max-width:900px){ .contenedor-autoridades{ gap:30px; } .card-autoridad{ width:220px; height:390px; } .card-autoridad img{ width:185px; height:250px; } } @media(max-width:600px){ .card-autoridad{ width:90%; max-width:300px; } }
+    </style>
+<header>
+
+    <div class="logo">
+
+        <img src="{{ url_for('static', filename='logop.jpg') }}">
+
+        <div class="texto-logo">
+            <h2>PROA</h2>
+            <span>Despeñaderos</span>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <ul>
+
+            
+
+           
+
+            <li>
+                <a href="/">Inicio</a>
+            </li>
+
+
+          
+
+    <li class="dropdown">
+
+                <a href="#planos">Institucional ▾</a>
+
+                <ul class="submenu">
+
+                    <li><a href="#planos">Planos</a></li>
+                    <li><a href="#instalaciones">Instalaciones</a></li>
+                    <li><a href="#materias">Materias</a></li>
+                    <li><a href="#uniforme">Uniforme</a></li>
+                    <li><a href="#autoridades">Autoridades</a></li>
+
+                </ul>
+
+            </li>
+
+            <li>
+                <a href="/paicor">PAICOR</a>
+            </li>
+
+
+            <li>
+                <a href="/proyectos">Proyectos</a>
+            </li>
+
+
+            <li>
+                <a href="/contacto">Contacto</a>
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+
+    <h2>Informacion sobre la Institucion</h2>
+
+
+</header>
+
+     
+
+
+<section class="plano" id="planos">
+
+    <h2>Planos de la Institución</h2>
+
+    <p>
+        Conocé la distribución de los espacios de PROA Despeñaderos.
+    </p>
+
+
+    <div class="plano-contenedor">
+
+        <img src="{{ url_for('static', filename='PLANOS.JPG') }}"
+        alt="Plano de PROA Despeñaderos">
+
+    </div>
+
+</section>
+
+
+
+
+<section class="espacios" id="instalaciones">
+
+
+    <h2>Nuestra institución cuenta con:</h2>
+
+
+    <div class="contenedor-espacios">
+
+
+        <div class="espacio">
+
+            <h3>Cancha deportiva</h3>
+
+            <button id="mostrarcancha">Ver más</button>
+
+            <p id="textocancha"></p>
+
+        </div>
+
+
+
+        <div class="espacio">
+
+            <h3>Comedor</h3>
+
+            <button id="mostrarcomedor">Ver más</button>
+
+            <p id="textocomedor"></p>
+
+        </div>
+
+
+
+        <div class="espacio">
+
+            <h3>Baños M/F</h3>
+
+            <button id="mostrarbaños">Ver más</button>
+
+            <p id="textobaños"></p>
+
+        </div>
+
+
+
+        <div class="espacio">
+
+            <h3>Preceptoría</h3>
+
+            <button id="mostrarpreceptoria">Ver más</button>
+
+            <p id="textopreceptoria"></p>
+
+        </div>
+
+
+
+        <div class="espacio">
+
+            <h3>Bicicletero</h3>
+
+            <button id="mostrarbici">Ver más</button>
+
+            <p id="textobici"></p>
+
+        </div>
+
+
+
+        <div class="espacio">
+
+            <h3>Mástil de la Bandera</h3>
+
+            <button id="mostrarmastil">Ver más</button>
+
+            <p id="textomastil"></p>
+
+        </div>
+
+
+
+        <div class="espacio">
+
+            <h3>Aulas</h3>
+
+            <button id="mostraraula">Ver más</button>
+
+            <p id="textoaula"></p>
+
+        </div>
+
+
+
+        <div class="espacio">
+
+            <h3>Biblioteca y Espacio Recreativo</h3>
+
+            <button id="mostrarbibloteca">Ver más</button>
+
+            <p id="textobibloteca"></p>
+
+        </div>
+
+
+    </div>
+
+
+<section id="materias" class="materias">
+
+    <h2>Materias de Especialidad</h2>
+
+    <p>
+        La orientación en Desarrollo de Software brinda una formación integral en programación,
+        tecnología, robótica, diseño y desarrollo web, preparando a los estudiantes para los
+        desafíos del mundo digital.
+    </p>
+
+
+    <div class="contenedor-anios">
+
+
+        <div class="anio">
+            <h3>1.º Año</h3>
+            <button id="mostrar1">Ver más</button>
+            <div id="contenido1"></div>
+        </div>
+
+
+        <div class="anio">
+            <h3>2.º Año</h3>
+            <button id="mostrar2">Ver más</button>
+            <div id="contenido2"></div>
+        </div>
+
+
+        <div class="anio">
+            <h3>3.º Año</h3>
+            <button id="mostrar3">Ver más</button>
+            <div id="contenido3"></div>
+        </div>
+
+
+        <div class="anio">
+            <h3>4.º Año</h3>
+            <button id="mostrar4">Ver más</button>
+            <div id="contenido4"></div>
+        </div>
+
+
+        <div class="anio">
+            <h3>5.º Año</h3>
+            <button id="mostrar5">Ver más</button>
+            <div id="contenido5"></div>
+        </div>
+
+
+        <div class="anio">
+            <h3>6.º Año</h3>
+            <button id="mostrar6">Ver más</button>
+            <div id="contenido6"></div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- UNIFORME -->
+
+<section class="banner">
+
+
+    <div class="texto">
+
+        <h1>Uniforme Escolar</h1>
+
+        <p>
+            Conocé todas las prendas oficiales del colegio.
+        </p>
+
+
+        <a href="#uniforme" class="boton">
+            Ver catálogo
+        </a>
+
+
+    </div>
+
+
+    <img src="{{ url_for('static', filename='maniqui.jpg') }}">
+
+
+</section>
+
+
+
+
+
+<section class="productos" id="uniforme">
+
+
+<h2>Nuestros Uniformes</h2>
+
+
+<div class="grid">
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='remere.jpg') }}">
+
+<h3>Remera</h3>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='campera.jpg') }}">
+
+<h3>Campera</h3>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='buzo.jpg') }}">
+
+<h3>Buzo</h3>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='pantalonl.jpg') }}">
+
+<h3>Pantalón</h3>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='pantalonc.jpg') }}">
+
+<h3>Bermuda</h3>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='buzop.jpg') }}">
+
+<h3>Buzo Promo 2026</h3>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='chombap.png') }}">
+
+<h3>Chomba Promo 2026</h3>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+<section class="autoridades" id="autoridades">
+
+    <h2>Autoridades de la Institución</h2>
+
+
+    <div class="contenedor-autoridades">
+
+
+        <div class="card-autoridad">
+
+            <div class="fondo-rojo"></div>
+
+            <img src="{{ url_for('static', filename='dire.jpg') }}" alt="Director">
+
+            <div class="info">
+
+                <h3>Ana Urban</h3>
+
+                <p>Director</p>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="card-autoridad">
+
+            <div class="fondo-rojo"></div>
+
+            <img src="{{ url_for('static', filename='prece1.jpg') }}" alt="Preceptora">
+
+            <div class="info">
+
+                <h3>Natalia Rodriguez</h3>
+
+                <p>Preceptora Turno Mañana</p>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="card-autoridad">
+
+            <div class="fondo-rojo"></div>
+
+            <img src="{{ url_for('static', filename='prece.jpg') }}" alt="Preceptora">
+
+            <div class="info">
+
+                <h3>Gabriela Nievas</h3>
+
+                <p>Preceptora Turno Tarde</p>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="card-autoridad">
+
+            <div class="fondo-rojo"></div>
+
+            <img src="{{ url_for('static', filename='coor.jpg') }}" alt="Coordinadora">
+
+            <div class="info">
+
+                <h3>Itati Carranza</h3>
+
+                <p>Coordinadora</p>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="card-autoridad">
+
+            <div class="fondo-rojo"></div>
+
+            <img src="{{ url_for('static', filename='secre.jpg') }}" alt="Secretaria">
+
+            <div class="info">
+
+                <h3>Yanina Adan</h3>
+
+                <p>Secretaria</p>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>

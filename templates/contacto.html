@@ -1,61 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proa Web</title>
-</head>
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PROA Despeñaderos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>PROA Despeñaderos</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
 </head>
 
+
 <body>
-
-<header>
-
-    <div class="logo">
-
-        <img src="logop.jpg" alt="Logo PROA">
-
-        <div class="texto-logo">
-            <h2>PROA</h2>
-            <span>Despeñaderos</span>
-        </div>
-
-    </div>
-
-    <nav>
-
-        <ul>
-
-            <li><a href="inicio.html">Inicio</a></li>
-            <li><a href="institucional.html">Institucional</a></li>
-            <li><a href="paicor.html">PAICOR</a></li>
-            <li><a href="proyectos.html">Proyectos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-
-        </ul>
-
-    </nav>
-    <h2>Contacto</h2>
-</header>
-<body>
-    <style>/*=============================
-        CONTACTO
-=============================*/
-
+<style>
 .contacto{
 
     width:100%;
@@ -321,105 +286,222 @@ padding:35px;
     opacity:1;
 }
 </style>
-    <section class="contacto">
 
-    <div class="contenedor-contacto">
-
-        <!-- INFORMACIÓN -->
-
-        <div class="info-contacto">
-
-            <div class="logo-contacto">
-                <img src="logop.jpg" alt="Logo PROA">
-            </div>
-
-            <h2>PROA Despeñaderos</h2>
-
-            <p>
-                ¿Tenés alguna consulta? Comunicate con nosotros a través de los siguientes medios o completá el formulario.
-            </p>
-
-            <div class="dato">
-                📍 <span>Calle Argentina, Despeñaderos, Córdoba.</span>
-            </div>
-
-            <div class="dato">
-                ☎️ <span>(54)4921000</span>
-            </div>
-
-            <div class="dato">
-                📷 <span>proadespenaderos</span>
-            </div>
-
-            <div class="dato">
-                🕒 <span>Lunes a Viernes<br>08:00 a 17:00 hs</span>
-            </div>
-
-        </div>
+<header>
 
 
-        <div class="formulario">
+<div class="logo">
 
-    <h2>Contacto</h2>
 
-    <p>Complete el formulario y responderemos a la brevedad.</p>
+<img src="{{ url_for('static', filename='logop.jpg') }}" alt="Logo PROA">
 
-    <form id="formContacto" action="/enviar" method="POST">
 
-        <div class="grupo">
-            <label>Nombre</label>
-            <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
-        </div>
+<div class="texto-logo">
 
-        <div class="grupo">
-            <label>Correo electrónico</label>
-            <input type="email"  name="correo" placeholder="Ingrese su correo" required>
-        </div>
+<h2>PROA</h2>
 
-        <div class="grupo">
-            <label>Consulta</label>
-            <textarea name="mensaje" placeholder="Escriba su consulta" required></textarea>
-        </div>
-
-        <button type="submit">Enviar Consulta</button>
-
-        
-
-    </form>
+<span>Despeñaderos</span>
 
 </div>
 
-    </div>
+
+</div>
+
+
+
+
+<nav>
+
+<ul>
+
+<li>
+<a href="/">Inicio</a>
+</li>
+
+
+<li>
+<a href="/institucional">Institucional</a>
+</li>
+
+
+<li>
+<a href="/paicor">PAICOR</a>
+</li>
+
+
+<li>
+<a href="/proyectos">Proyectos</a>
+</li>
+
+
+<li>
+<a href="/contacto">Contacto</a>
+</li>
+
+
+</ul>
+
+
+</nav>
+
+
+<h2>Contacto</h2>
+
+
+</header>
+
+
+
+
+
+<section class="contacto">
+
+
+<div class="contenedor-contacto">
+
+
+
+<div class="info-contacto">
+
+
+<div class="logo-contacto">
+
+<img src="{{ url_for('static', filename='logop.jpg') }}" alt="Logo PROA">
+
+</div>
+
+
+
+<h2>PROA Despeñaderos</h2>
+
+
+
+<p>
+¿Tenés alguna consulta? Comunicate con nosotros a través de los siguientes medios o completá el formulario.
+</p>
+
+
+
+
+<div class="dato">
+📍 <span>Calle Argentina, Despeñaderos, Córdoba.</span>
+</div>
+
+
+
+<div class="dato">
+☎️ <span>(54)4921000</span>
+</div>
+
+
+
+<div class="dato">
+📷 <span>proadespenaderos</span>
+</div>
+
+
+
+<div class="dato">
+🕒 <span>Lunes a Viernes<br>08:00 a 17:00 hs</span>
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="formulario">
+
+
+<h2>Contacto</h2>
+
+
+<p>
+Complete el formulario y responderemos a la brevedad.
+</p>
+
+
+
+<form id="formContacto" action="/enviar" method="POST">
+
+
+<div class="grupo">
+
+<label>Nombre</label>
+
+<input 
+type="text" 
+name="nombre" 
+placeholder="Ingrese su nombre"
+required>
+
+</div>
+
+
+
+
+<div class="grupo">
+
+<label>Correo electrónico</label>
+
+<input 
+type="email"
+name="correo"
+placeholder="Ingrese su correo"
+required>
+
+</div>
+
+
+
+
+<div class="grupo">
+
+<label>Consulta</label>
+
+
+<textarea 
+name="mensaje"
+placeholder="Escriba su consulta"
+required></textarea>
+
+
+</div>
+
+
+
+
+<button type="submit">
+Enviar Consulta
+</button>
+
+
+
+</form>
+
+
+
+</div>
+
+
+
+
+</div>
+
 
 </section>
- <script>document.addEventListener("DOMContentLoaded", function () {
 
-    const formulario = document.getElementById("formContacto");
-    const mensaje = document.getElementById("mensaje");
 
-    formulario.addEventListener("submit", function (e) {
 
-        e.preventDefault();
 
-        // Si hay campos inválidos, mostrar la validación del navegador
-        if (!formulario.checkValidity()) {
-            formulario.reportValidity();
-            return;
-        }
 
-        mensaje.textContent = "✅ ¡Los datos se enviaron correctamente!";
-        mensaje.classList.add("mostrar");
+<script src="{{ url_for('static', filename='main.js') }}"></script>
 
-        formulario.reset();
 
-        setTimeout(() => {
-            mensaje.classList.remove("mostrar");
-            mensaje.textContent = "";
-        }, 3000);
-
-    });
-
-});</script>
- <script src="main.js"></script>
 </body>
+
 </html>
+   
