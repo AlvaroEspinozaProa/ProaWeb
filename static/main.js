@@ -313,7 +313,7 @@ crearDesplegable("mostrar6","contenido6",`
 
 
 
-//paicor
+//paicor: se esta llevando a cabo en la otra comnputadora para que sea mas rapido, cuando se termine vamos a pasar todo a esta computadora.
 
 
 
