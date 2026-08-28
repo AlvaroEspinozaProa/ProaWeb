@@ -73,7 +73,80 @@
 
 
 
-    <h2>Inicio</h2>
+    <h2>Cronograma de Paicor</h2>
 
 
 </header>
+
+
+
+
+
+<p class="texto">
+
+A continuación se verán los distintos cronogramas correspondientes a cada mes.
+
+</p>
+
+<div class="menu-hoy">
+
+    <h2>Menú de hoy</h2>
+
+    <p id="plato-dia">Cargando menú...</p>
+
+    <p id="postre-dia">Cargando postre...</p>
+
+</div>
+
+
+
+
+<section class="cronograma">
+
+    <div class="selector-meses">
+
+        <button class="mes activo" onclick="mostrarMes('mayo',this)">Mayo</button>
+
+        <button class="mes" onclick="mostrarMes('junio',this)">Junio</button>
+
+        <button class="mes" onclick="mostrarMes('julio',this)">Julio</button>
+
+        <button class="mes" onclick="mostrarMes('agosto',this)">Agosto</button>
+
+        <button class="mes" onclick="mostrarMes('septiembre',this)">Septiembre</button>
+
+        <button class="mes" onclick="mostrarMes('octubre',this)">Octubre</button>
+
+        <button class="mes" onclick="mostrarMes('noviembre',this)">Noviembre</button>
+
+        <button class="mes" onclick="mostrarMes('diciembre',this)">Diciembre</button>
+
+    </div>
+
+    
+
+    <div id="contenedorCalendario"></div>
+
+</section>
+
+<!-- MODAL MENU -->
+
+<div class="modal" id="modal">
+
+    <div class="contenido-modal">
+
+        <button class="cerrar" onclick="cerrarMenu()">×</button>
+
+        <div id="contenidoMenu">
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='paicor.js') }}"></script>
+
+</body>
+
+</html>

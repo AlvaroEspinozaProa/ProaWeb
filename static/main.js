@@ -1,4 +1,4 @@
-//PLANOS
+//Infraestructuras
 
 let botoncancha = document.getElementById("mostrarcancha");
 let texto = document.getElementById("textocancha");
@@ -158,10 +158,6 @@ crearDesplegable("mostrar1","contenido1",`
 <td>Introduce el pensamiento computacional y la programación con Pilas Bloques y mBlock.</td>
 </tr>
 
-<tr>
-<td>Software de Apps</td>
-<td>Conoce el uso y las funciones de diferentes aplicaciones informáticas.</td>
-</tr>
 
 </table>
 `);
@@ -236,7 +232,7 @@ crearDesplegable("mostrar4","contenido4",`
 </tr>
 
 <tr>
-<td>Diseño de Interfaces</td>
+<td>Diseño de Interfaces Graficas</td>
 <td>Diseño de páginas web atractivas, funcionales y fáciles de usar.</td>
 </tr>
 
@@ -279,13 +275,13 @@ crearDesplegable("mostrar6","contenido6",`
 <tr><th>Materia</th><th>Descripción</th></tr>
 
 <tr>
-<td>Desarrollo de Aplicaciones Web y Microservicios</td>
+<td>Desarrollo de Aplicaciones Web</td>
 <td>Creación de aplicaciones web utilizando arquitectura de microservicios.</td>
 </tr>
 
 <tr>
-<td>Diseño y Planificación</td>
-<td>Planificación, documentación y organización de proyectos de software.</td>
+<td>Programacion IIII</td>
+<td>Uso de la tecnologia y desarrollo de páginas web y aplicaciones utilizando Visual Studio Code con diferentes programas.</td>
 </tr>
 
 <tr>
@@ -294,26 +290,14 @@ crearDesplegable("mostrar6","contenido6",`
 </tr>
 
 <tr>
-<td>Gestión de Microservicios</td>
-<td>Uso de Docker y Kubernetes para desplegar y administrar aplicaciones.</td>
+<td>Taller de Inglés Aplicado</td>
+<td>Uso del inglés en tecnología mediante proyectos y presentaciones.</td>
 </tr>
 
-<tr>
-<td>Formación para la Vida y el Trabajo</td>
-<td>Realización de pasantías y elaboración de una tesina basada en la experiencia laboral.</td>
-</tr>
 
 </table>
 `);
 
-
-
-
-//contacto
-
-
-
-//paicor: se esta llevando a cabo en la otra comnputadora para que sea mas rapido, cuando se termine vamos a pasar todo a esta computadora.
 
 
 

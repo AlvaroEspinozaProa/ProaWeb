@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Administrador PAICOR</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1>Administrador PAICOR</h1>
+
+  <form action="/guardar_menu" method="POST">   
+
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+
+        <label for="plato">Plato</label>
+        <input
+            type="text"
+            id="plato"
+            name="plato"
+            placeholder="Ingrese el plato"
+            required
+        >
+
+
+        <label for="postre">Postre</label>
+        <input
+            type="text"
+            id="postre"
+            name="postre"
+            placeholder="Ingrese el postre"
+            required
+        >
+
+
+        
+
+
+        <button type="submit">
+            Guardar
+        </button>
+
+    </form>
+
+</body>
+
+    <script src="{{ url_for('static', filename='paicor.js') }}"></script>
+</html>
+
