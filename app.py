@@ -1,70 +1,4 @@
-from flask import Flask, request, render_template
-import mysql.connector
-
-app = Flask(__name__)
-
-
-@app.route("/")
-def inicio():
-    return render_template("inicio.html")
-
-
-@app.route("/institucional")
-def institucional():
-    return render_template("institucional.html")
-
-
-@app.route("/contacto")
-def contacto():
-    return render_template("contacto.html")
-
-
-@app.route("/paicor")
-def paicor():
-    return render_template("paicor.html")
-
-
-@app.route("/proyectos")
-def proyectos():
-    return render_template("proyectos.html")
-
-@app.route("/enviar", methods=["POST"])
-def enviar():
-
-    nombre = request.form["nombre"]
-    correo = request.form["correo"]
-    mensaje = request.form["mensaje"]
-
-    conexion = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="bd_colegio",
-        port=3307
-    )
-
-    cursor = conexion.cursor()
-
-    sql = """
-    INSERT INTO contacto (Nombre, Correo, Mensaje)
-    VALUES (%s,%s,%s)
-    """
-
-    cursor.execute(sql, (nombre, correo, mensaje))
-
-    conexion.commit()
-
-    cursor.close()
-    conexion.close()
-
-    return render_template("enviado.html")
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
-
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, request, render_template, jsonify
 import mysql.connector
 
 app = Flask(__name__)
@@ -119,6 +53,42 @@ def admin():
 
 
 # ==========================================
+# ENVIAR CONTACTO
+# ==========================================
+
+@app.route("/enviar", methods=["POST"])
+def enviar():
+
+    nombre = request.form["nombre"]
+    correo = request.form["correo"]
+    mensaje = request.form["mensaje"]
+
+    conexion = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="bd_colegio",
+        port=3307
+    )
+
+    cursor = conexion.cursor()
+
+    sql = """
+    INSERT INTO contacto (Nombre, Correo, Mensaje)
+    VALUES (%s, %s, %s)
+    """
+
+    cursor.execute(sql, (nombre, correo, mensaje))
+
+    conexion.commit()
+
+    cursor.close()
+    conexion.close()
+
+    return render_template("enviado.html")
+
+
+# ==========================================
 # OBTENER MENÚS
 # ==========================================
 
@@ -142,18 +112,14 @@ def obtener_menus():
         cursor.close()
         conexion.close()
 
-
         # Convertir fechas a texto YYYY-MM-DD
 
         for menu in menus:
 
             if menu["fecha"]:
-
                 menu["fecha"] = menu["fecha"].strftime("%Y-%m-%d")
 
-
         return jsonify(menus)
-
 
     except Exception as error:
 
@@ -204,38 +170,29 @@ def guardar_menu():
         cursor.close()
         conexion.close()
 
-
-        # ==========================================
-        # MENSAJE DE CONFIRMACIÓN
-        # ==========================================
-
         mensaje = """
-<!DOCTYPE html>
-<html lang="es">
+        <!DOCTYPE html>
+        <html lang="es">
 
-<head>
+        <head>
+            <meta charset="UTF-8">
+            <title>Menú guardado</title>
+        </head>
 
-    <meta charset="UTF-8">
+        <body>
 
-    <title>Menú guardado</title>
+            <h1>✅ Menú guardado correctamente</h1>
 
-</head>
+            <a href="/admin">
+                <button type="button">Cargar otro menú</button>
+            </a>
 
-<body>
+        </body>
 
-    <h1>✅ Menú guardado correctamente</h1>
-
-    <a href="/admin">
-        <button type="button">Cargar otro menú</button>
-    </a>
-
-</body>
-
-</html>
-"""
+        </html>
+        """
 
         return mensaje
-
 
     except Exception as error:
 
@@ -254,4 +211,4 @@ if __name__ == "__main__":
         host="127.0.0.1",
         port=5000,
         debug=True
-    ) 
+    )

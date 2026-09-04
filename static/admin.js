@@ -11,12 +11,16 @@ function guardarMenu() {
     datos.append("plato", plato);
     datos.append("postre", postre);
 
-    fetch("back.php", {
+      fetch("/guardar_menu", {
         method: "POST",
         body: datos
     })
     .then(respuesta => respuesta.text())
     .then(mensaje => {
         alert(mensaje);
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("No se pudo guardar el menú.");
     });
 }
