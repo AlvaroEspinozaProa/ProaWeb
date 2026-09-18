@@ -443,6 +443,34 @@ button:hover {
 }
 /* ---------- SUBMENÚ ---------- */
 
+.dropdown{
+    position:relative;
+}
+
+/* Flecha creada con CSS para que mantenga la misma alineación que el texto. */
+.dropdown > .dropdown-trigger{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    white-space:nowrap;
+}
+
+.dropdown > .dropdown-trigger::after{
+    content:"";
+    width:7px;
+    height:7px;
+    border-right:2px solid currentColor;
+    border-bottom:2px solid currentColor;
+    transform:rotate(45deg) translateY(-2px);
+    transform-origin:center;
+    transition:transform .2s ease;
+}
+
+.dropdown:hover > .dropdown-trigger::after,
+.dropdown:focus-within > .dropdown-trigger::after{
+    transform:rotate(225deg) translate(-1px, -1px);
+}
+
 .submenu{
     display:none;
     position:absolute;
@@ -476,6 +504,10 @@ button:hover {
 /* Mostrar al pasar el mouse */
 
 .dropdown:hover .submenu{
+    display:block;
+}
+
+.dropdown:focus-within .submenu{
     display:block;
 }
 html{
@@ -841,6 +873,7 @@ grid-template-columns:1fr;
 }
 .espacios{
     width:90%;
+    max-width:1500px;
     margin:80px auto;
     text-align:center;
 }
@@ -853,61 +886,99 @@ grid-template-columns:1fr;
 
 .contenedor-espacios{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(min(100%, 320px),1fr));
+    gap:28px;
+    align-items:start;
 }
 
 .espacio{
     background:#fff;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    min-height:210px;
+    padding:28px;
+    border:1px solid rgba(0,31,84,.08);
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,31,84,.10);
     transition:.3s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
 }
 
 .espacio:hover{
     transform:translateY(-8px);
-    border-top:5px solid #1CCAFF;
+    border-color:#1CCAFF;
+    box-shadow:0 18px 32px rgba(0,31,84,.16);
 }
 
 .espacio h3{
     color:#A20000;
-    margin-bottom:15px;
-    font-size:22px;
+    margin:0;
+    font-size:20px;
+    line-height:1.35;
 }
 
 .espacio p{
-    color:#555;
-    line-height:1.7;
+    width:100%;
+    margin:0;
+    padding-top:16px;
+    border-top:1px solid #e7edf4;
+    color:#46505e;
+    font-size:15px;
+    line-height:1.75;
+    text-align:left;
 }
 /*=================== MATERIAS ===================*/
+
+.materias{
+    width:90%;
+    max-width:1500px;
+    margin:80px auto;
+    text-align:center;
+}
+
+.materias > h2{
+    color:#001F54;
+    font-size:42px;
+    margin-bottom:14px;
+}
+
+.materias > p{
+    max-width:900px;
+    margin:0 auto;
+    color:#46505e;
+    line-height:1.75;
+}
 
 .contenedor-anios{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 30px;
+    gap: 24px;
+    margin-top: 38px;
+    align-items:start;
 }
 
 .anio{
     background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.1);
-    text-align: center;
+    padding: 26px;
+    border:1px solid rgba(0,31,84,.08);
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(0,31,84,.09);
+    text-align:left;
 }
 
 .anio h3{
     color: #006d77;
-    margin-bottom: 15px;
+    font-size:20px;
+    margin:0 0 16px;
 }
 
 .anio button{
     background: #0097A7;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 11px 20px;
+    border-radius: 10px;
     cursor: pointer;
     transition: .3s;
 }
@@ -915,10 +986,74 @@ grid-template-columns:1fr;
 .anio button:hover{
     background: #007b8a;
 }
+
+.anio > div{
+    margin-top:22px;
+    overflow-x:auto;
+}
+
+.anio table{
+    width:100%;
+    min-width:520px;
+    border-collapse:separate;
+    border-spacing:0;
+    color:#334155;
+    font-size:14px;
+    line-height:1.5;
+    text-align:left;
+}
+
+.anio th{
+    padding:12px 14px;
+    background:#eaf9fc;
+    color:#006d77;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+}
+
+.anio th:first-child{
+    width:38%;
+    border-radius:10px 0 0 0;
+}
+
+.anio th:last-child{
+    border-radius:0 10px 0 0;
+}
+
+.anio td{
+    padding:14px;
+    vertical-align:top;
+    border-bottom:1px solid #e7edf4;
+}
+
+.anio td:first-child{
+    color:#001F54;
+    font-weight:600;
+}
+
+.anio tr:last-child td{
+    border-bottom:0;
+}
 @media(max-width:768px){
 
     .contenedor-anios{
         grid-template-columns: 1fr;
+    }
+
+    .espacios,
+    .materias{
+        width:92%;
+    }
+
+    .espacios h2,
+    .materias > h2{
+        font-size:30px;
+    }
+
+    .espacio,
+    .anio{
+        padding:22px;
     }
 
 }
@@ -2128,3 +2263,193 @@ h2 {
     color: #999;
 }
 
+/* =====================================================
+   BARRA DE NAVEGACIÓN UNIFICADA
+   ===================================================== */
+
+header {
+    width: 94%;
+    max-width: 1440px;
+    min-height: 92px;
+    margin: 22px auto;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: rgba(255, 255, 255, .96);
+    border: 1px solid rgba(0, 31, 84, .10);
+    border-radius: 22px;
+    box-shadow: 0 12px 32px rgba(0, 31, 84, .13);
+    backdrop-filter: blur(10px);
+}
+
+header:hover {
+    box-shadow: 0 16px 38px rgba(0, 31, 84, .17);
+}
+
+header .logo {
+    flex: 0 0 auto;
+    gap: 11px;
+}
+
+header .logo::after {
+    content: none;
+}
+
+header .logo img {
+    width: 58px;
+    height: 58px;
+    padding: 3px;
+    object-fit: cover;
+    border: 1px solid #d9eef4;
+    border-radius: 50%;
+    background: #fff;
+}
+
+header .texto-logo h2 {
+    margin: 0;
+    color: #001F54;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: .02em;
+}
+
+header .texto-logo span {
+    margin-top: 6px;
+    color: #A20000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+header nav {
+    flex: 1;
+}
+
+header nav ul {
+    justify-content: center;
+    gap: 4px;
+}
+
+header nav a {
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #001F54;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+header nav a:hover {
+    color: #001F54;
+    background: #eaf9fc;
+    transform: none;
+}
+
+header nav > ul > li:last-child > a {
+    padding: 10px 18px;
+    background: #A20000;
+    color: #fff;
+    box-shadow: 0 5px 12px rgba(162, 0, 0, .18);
+}
+
+header nav > ul > li:last-child > a:hover {
+    background: #7f0000;
+    color: #fff;
+}
+
+header > h2 {
+    max-width: 220px;
+    margin: 0;
+    padding: 9px 13px;
+    border-left: 3px solid #1CCAFF;
+    color: #001F54;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: left;
+}
+
+header .submenu {
+    /* Sin separación: evita que el menú se cierre al mover el cursor hacia él. */
+    top: 100%;
+    min-width: 210px;
+    padding: 7px;
+    border: 1px solid rgba(0, 31, 84, .08);
+    border-radius: 14px;
+    box-shadow: 0 16px 30px rgba(0, 31, 84, .18);
+}
+
+header .submenu li a {
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+header .submenu li:last-child a {
+    background: transparent;
+    color: #001F54;
+    box-shadow: none;
+}
+
+header .submenu li:last-child a:hover {
+    background: #1CCAFF;
+    color: #fff;
+}
+
+@media (max-width: 1150px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    header nav {
+        order: 3;
+        width: 100%;
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 720px) {
+    header {
+        width: 92%;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    header .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    header .texto-logo h2 {
+        font-size: 24px;
+    }
+
+    header > h2 {
+        max-width: 150px;
+        font-size: 12px;
+    }
+
+    header nav ul {
+        gap: 4px;
+    }
+
+    header nav a,
+    header nav > ul > li:last-child > a {
+        padding: 9px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        position: relative;
+    }
+
+    header > h2 {
+        display: none;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
