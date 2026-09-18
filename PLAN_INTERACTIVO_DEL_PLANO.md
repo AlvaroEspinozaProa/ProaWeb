@@ -1,8 +1,8 @@
 # Propuesta opcional: plano interactivo de la institución
 
-Chicos, viendo el plano que ya hicieron con Planner 5D para la página institucional, se me ocurrió una mejora que puede quedar muy buena: volverlo interactivo.
+Chicos, viendo el plano que ya hicieron con Planner 5D para la página, se me ocurrió una mejora que puede quedar muy buena: volverlo interactivo.
 
-La idea es que el plano no sea solo una imagen. Cuando una persona pase el mouse por un sector —o lo toque desde el celular— ese lugar se ilumine y muestre una breve información. Por ejemplo: comedor, aulas, cancha, biblioteca, baños o bicicletero.
+La idea es que el plano no sea solo una imagen. Cuando una persona pase el mouse por un sector ese lugar se ilumine y muestre una breve información. Por ejemplo: comedor, aulas, cancha, biblioteca, baños o bicicletero.
 
 
 ## Qué van a hacer
