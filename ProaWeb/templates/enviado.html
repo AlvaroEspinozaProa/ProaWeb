@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mensaje Enviado</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+
+<body>
+<style>
+    /* ============================
+      MENSAJE ENVIADO ESTILO 3
+============================ */
+
+.mensaje-enviado{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+
+    background:
+    radial-gradient(circle at top left,#43c7f0,transparent 35%),
+    linear-gradient(135deg,#001F54,#062B55);
+
+}
+
+
+
+.tarjeta-mensaje{
+
+    width:520px;
+
+    max-width:90%;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:55px 45px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+    border-top:8px solid #1CCAFF;
+
+    animation:subir .7s ease;
+
+}
+
+
+
+
+
+.tarjeta-mensaje::before{
+
+    content:"✓";
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 25px;
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    background:#1CCAFF;
+
+    color:white;
+
+    font-size:55px;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+.tarjeta-mensaje h1{
+
+    color:#001F54;
+
+    font-size:36px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+.tarjeta-mensaje p{
+
+    color:#666;
+
+    font-size:17px;
+
+    line-height:28px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+
+
+.tarjeta-mensaje .boton{
+
+    display:inline-block;
+
+    padding:14px 35px;
+
+    background:#001F54;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+
+
+.tarjeta-mensaje .boton:hover{
+
+    background:#1CCAFF;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+
+
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+@media(max-width:600px){
+
+    .tarjeta-mensaje{
+
+        padding:40px 25px;
+
+    }
+
+
+    .tarjeta-mensaje h1{
+
+        font-size:28px;
+
+    }
+
+}
+</style>
+
+<header>
+
+<div class="logo">
+
+<img src="{{ url_for('static', filename='logop.jpg') }}">
+
+<div class="texto-logo">
+
+<h2>PROA</h2>
+
+<span>Despeñaderos</span>
+
+</div>
+
+</div>
+
+
+
+<nav>
+
+<ul>
+
+<li><a href="/">Inicio</a></li>
+
+<li><a href="/institucional">Institucional</a></li>
+
+<li><a href="/paicor">PAICOR</a></li>
+
+<li><a href="/proyectos">Proyectos</a></li>
+
+<li><a href="/contacto">Contacto</a></li>
+
+</ul>
+
+</nav>
+
+
+</header>
+
+
+
+
+
+<section class="mensaje-enviado">
+
+
+<div class="tarjeta-mensaje">
+
+
+<h1>Mensaje Enviado</h1>
+
+
+<p>
+Gracias por comunicarte con PROA Despeñaderos.
+Tu consulta fue recibida correctamente.
+</p>
+
+
+<a href="/" class="boton">
+Volver al inicio
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+</body>
+
+</html>

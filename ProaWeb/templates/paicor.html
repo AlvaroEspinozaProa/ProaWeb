@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proa Web</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+
+        <img src="{{ url_for('static', filename='logop.jpg') }}" alt="Logo PROA">
+
+
+        <div class="texto-logo">
+
+            <h2>PROA</h2>
+
+            <span>Despeñaderos</span>
+
+        </div>
+
+    </div>
+
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="/">Inicio</a>
+            </li>
+
+
+            <li>
+                <a href="/institucional">Institucional</a>
+            </li>
+
+
+            <li>
+                <a href="/paicor">PAICOR</a>
+            </li>
+
+
+            <li>
+                <a href="/proyectos">Proyectos</a>
+            </li>
+
+
+            <li>
+                <a href="/contacto">Contacto</a>
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+
+    <h2>Cronograma de Paicor</h2>
+
+
+</header>
+
+
+
+
+
+<p class="texto">
+
+A continuación se verán los distintos cronogramas correspondientes a cada mes.
+
+</p>
+
+<div class="menu-hoy">
+
+    <h2>Menú de hoy</h2>
+
+    <p id="plato-dia">Cargando menú...</p>
+
+    <p id="postre-dia">Cargando postre...</p>
+
+</div>
+
+
+
+
+<section class="cronograma">
+
+    <div class="selector-meses">
+
+        <button class="mes activo" onclick="mostrarMes('mayo',this)">Mayo</button>
+
+        <button class="mes" onclick="mostrarMes('junio',this)">Junio</button>
+
+        <button class="mes" onclick="mostrarMes('julio',this)">Julio</button>
+
+        <button class="mes" onclick="mostrarMes('agosto',this)">Agosto</button>
+
+        <button class="mes" onclick="mostrarMes('septiembre',this)">Septiembre</button>
+
+        <button class="mes" onclick="mostrarMes('octubre',this)">Octubre</button>
+
+        <button class="mes" onclick="mostrarMes('noviembre',this)">Noviembre</button>
+
+        <button class="mes" onclick="mostrarMes('diciembre',this)">Diciembre</button>
+
+    </div>
+
+    
+
+    <div id="contenedorCalendario"></div>
+
+</section>
+
+<!-- MODAL MENU -->
+
+<div class="modal" id="modal">
+
+    <div class="contenido-modal">
+
+        <button class="cerrar" onclick="cerrarMenu()">×</button>
+
+        <div id="contenidoMenu">
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='paicor.js') }}"></script>
+
+</body>
+
+</html>
