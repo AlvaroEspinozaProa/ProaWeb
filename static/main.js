@@ -122,7 +122,54 @@ botonbibloteca.addEventListener("click", function () {
         botonbibloteca.textContent = "Ver más";
     }
 });
+// =====================================================
+// PLANO INTERACTIVO
+// =====================================================
 
+const zonasPlano = document.querySelectorAll(".zona-plano");
+
+zonasPlano.forEach(zona => {
+
+    zona.addEventListener("click", function () {
+
+        const sector = this.dataset.sector;
+
+        // Todas las tarjetas
+        const tarjetas = document.querySelectorAll(".espacio");
+
+        // Sacamos la selección anterior
+        tarjetas.forEach(tarjeta => {
+            tarjeta.classList.remove("tarjeta-activa");
+        });
+
+
+        // Buscamos la tarjeta correspondiente
+        const tarjeta = document.getElementById("card-" + sector);
+
+
+        if (tarjeta) {
+
+            // Activamos la tarjeta
+            tarjeta.classList.add("tarjeta-activa");
+
+
+            // Bajamos hasta la tarjeta
+            tarjeta.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+
+            // Quitamos el resaltado después de unos segundos
+            setTimeout(() => {
+                tarjeta.classList.remove("tarjeta-activa");
+            }, 4000);
+
+        }
+
+    });
+
+});
 
 //MATERIAS TABLA
 function crearDesplegable(idBoton, idContenido, contenidoHTML){

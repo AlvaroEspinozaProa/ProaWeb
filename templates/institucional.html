@@ -15,7 +15,364 @@
 </head>
 
 <body>
-<style>/*========================== AUTORIDADES ==========================*/
+<style>
+
+/* =====================================================
+   PLANO INTERACTIVO
+===================================================== */
+
+.plano {
+    width: 90%;
+    margin: 70px auto;
+    text-align: center;
+}
+
+.plano h2 {
+    color: #001F54;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.plano p {
+    color: #555;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+
+/* CONTENEDOR DEL PLANO */
+
+.plano-contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    border-radius: 25px;
+    overflow: hidden;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.12);
+}
+
+.plano-contenedor img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+
+/* =====================================================
+   ZONAS CLICKEABLES
+===================================================== */
+
+.zona-plano {
+    position: absolute;
+    display: block;
+
+    border: 2px solid transparent;
+    background: rgba(28, 202, 255, 0);
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        border .25s ease,
+        box-shadow .25s ease;
+
+    z-index: 5;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.zona-plano:hover {
+    background: rgba(28, 202, 255, .28);
+    border: 2px solid #1CCAFF;
+    box-shadow: 0 0 20px rgba(28, 202, 255, .35);
+}
+
+
+/* =====================================================
+   NOMBRE QUE APARECE AL PASAR EL MOUSE
+===================================================== */
+
+.zona-plano::after {
+    content: attr(data-nombre);
+
+    position: absolute;
+
+    left: 50%;
+    bottom: calc(100% + 10px);
+
+    transform: translateX(-50%);
+
+    background: #001F54;
+    color: white;
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: .2s ease;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+}
+
+
+/* FLECHITA DEL CARTEL */
+
+.zona-plano::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: calc(100% + 4px);
+
+    transform: translateX(-50%);
+
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid #001F54;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .2s ease;
+}
+
+
+/* MOSTRAR NOMBRE */
+
+.zona-plano:hover::after,
+.zona-plano:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =====================================================
+   POSICIONES DE LAS ZONAS
+===================================================== */
+
+/*
+    Estas posiciones están hechas según el plano
+    de la imagen que me pasaste.
+    Si alguna zona queda corrida, solo modificamos
+    top / left / width / height.
+*/
+
+
+/* CANCHA - sector superior izquierdo */
+
+.zona-cancha {
+    left: 6.5%;
+    top: 23%;
+    width: 11%;
+    height: 16%;
+}
+
+
+/* COMEDOR - sector superior derecho */
+
+.zona-comedor {
+    left: 70%;
+    top: 30%;
+    width: 23.5%;
+    height: 16%;
+}
+
+
+/* BAÑOS - sector central */
+
+.zona-baños {
+    left: 55%;
+    top: 29%;
+    width: 7%;
+    height: 17%;
+}
+
+
+/* PRECEPTORÍA - sector central */
+
+.zona-preceptoria {
+    left: 53%;
+    top: 54.5%;
+    width: 9.5%;
+    height: 16%;
+}
+
+
+/* BICICLETERO - sector inferior central */
+
+.zona-bici {
+    left: 56.5%;
+    top: 70%;
+    width: 6%;
+    height: 6%;
+}
+
+
+/* MÁSTIL - espacio exterior izquierdo */
+
+.zona-mastil {
+    left: 62%;
+    top: 15%;
+    width: 31.5%;
+    height: 15%;
+}
+
+
+
+/* AULAS - sectores con aulas arriba*/
+
+.zona-aulas1 {
+    left: 41%;
+    top: 30%;
+    width: 7%;
+    height: 16%;
+}
+
+.zona-aulas3 {
+    left: 25%;
+    top: 30%;
+    width: 8.5%;
+    height: 16%;
+}
+/* AULAS - sectores con aulas */
+
+.zona-aulas2 {
+    left: 25%;
+    top: 54%;
+    width: 23%;
+    height: 17%;
+}
+
+
+/* AULAS - sectores con aulas laboratorios */
+
+.zona-aulas-laboratorios {
+    left: 70%;
+    top: 53%;
+    width: 23.5%;
+    height: 17%;
+}
+
+
+
+/* BIBLIOTECA / ESPACIO RECREATIVO */
+
+.zona-biblioteca {
+    left: 48%;
+    top: 54%;
+    width: 5%;
+    height: 17%;
+}
+
+/* Espacio recreativo */
+.zona-biblioteca-recreativo {
+    left: 33.5%;
+    top: 29.5%;
+    width: 7.5%;
+    height: 17%;
+}
+/* Espacio de juegos */
+.zona-biblioteca-juegos {
+    left: 48%;
+    top: 30%;
+    width: 7.5%;
+    height: 16%;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .plano {
+        width: 95%;
+    }
+
+    .plano h2 {
+        font-size: 30px;
+    }
+
+    .plano p {
+        font-size: 14px;
+    }
+
+    .plano-contenedor {
+        padding: 8px;
+    }
+
+    .zona-plano::after {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+}
+
+/* =====================================================
+   TARJETA SELECCIONADA DESDE EL PLANO
+===================================================== */
+
+.espacio {
+    transition: 
+        transform .3s ease,
+        box-shadow .3s ease,
+        border .3s ease,
+        background .3s ease;
+    
+    border: 2px solid transparent;
+}
+
+
+/* TARJETA QUE SE SELECCIONÓ DESDE EL PLANO */
+
+.espacio.tarjeta-activa {
+    border: 2px solid #1CCAFF;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f0fbff 100%
+    );
+
+    box-shadow:
+        0 15px 35px rgba(28, 202, 255, .30);
+
+    transform: translateY(-8px);
+}
+
+
+/* TÍTULO DE LA TARJETA ACTIVA */
+
+.espacio.tarjeta-activa h3 {
+    color: #001F54;
+}
+
+
+/* BOTÓN DE LA TARJETA ACTIVA */
+
+.espacio.tarjeta-activa button {
+    background: #1CCAFF;
+    color: #001F54;
+}
+
+/*========================== AUTORIDADES ==========================*/
  .autoridades{ 
     width:90%;
      margin:80px auto; 
@@ -89,7 +446,7 @@
 
     <li class="dropdown">
 
-                <a href="#planos" class="dropdown-trigger">Institucional</a>
+                <a href="#planos">Institucional ▾</a>
 
                 <ul class="submenu">
 
@@ -134,22 +491,109 @@
 
 <section class="plano" id="planos">
 
-    <h2>Planos de la Institución</h2>
+    <h2>Plano interactivo de la Institución</h2>
 
     <p>
-        Conocé la distribución de los espacios de PROA Despeñaderos.
+        Pasá el mouse sobre los sectores del plano para conocerlos y hacé clic para ver su información.
     </p>
-
 
     <div class="plano-contenedor">
 
         <img src="{{ url_for('static', filename='PLANOS.JPG') }}"
-        alt="Plano de PROA Despeñaderos">
+             alt="Plano de PROA Despeñaderos">
+
+        <!-- CANCHA -->
+        <button class="zona-plano zona-cancha"
+                data-sector="cancha"
+                data-nombre="Cancha deportiva"
+                aria-label="Cancha deportiva">
+        </button>
+
+        <!-- COMEDOR -->
+        <button class="zona-plano zona-comedor"
+                data-sector="comedor"
+                data-nombre="Comedor"
+                aria-label="Comedor">
+        </button>
+
+        <!-- BAÑOS -->
+        <button class="zona-plano zona-baños"
+                data-sector="baños"
+                data-nombre="Baños M/F"
+                aria-label="Baños M/F">
+        </button>
+
+        <!-- PRECEPTORÍA -->
+        <button class="zona-plano zona-preceptoria"
+                data-sector="preceptoria"
+                data-nombre="Preceptoría"
+                aria-label="Preceptoría">
+        </button>
+
+        <!-- BICICLETERO -->
+        <button class="zona-plano zona-bici"
+                data-sector="bici"
+                data-nombre="Bicicletero"
+                aria-label="Bicicletero">
+        </button>
+
+        <!-- MÁSTIL -->
+        <button class="zona-plano zona-mastil"
+                data-sector="mastil"
+                data-nombre="Mástil de la Bandera"
+                aria-label="Mástil de la Bandera">
+        </button>
+
+        <!-- AULAS -->
+        <button class="zona-plano zona-aulas1"
+                data-sector="aulas"
+                data-nombre="Aulas"
+                aria-label="Aulas">
+        </button>
+
+        <!-- AULAS -->
+        <button class="zona-plano zona-aulas2"
+                data-sector="aulas"
+                data-nombre="Aulas"
+                aria-label="Aulas">
+        </button>
+
+ <!-- AULAS -->
+        <button class="zona-plano zona-aulas3"
+                data-sector="aulas"
+                data-nombre="Aulas"
+                aria-label="Aulas">
+        </button>
+
+        <!-- AULAS -->
+        <button class="zona-plano zona-aulas-laboratorios"
+                data-sector="aulas"
+                data-nombre="Aulas"
+                aria-label="Aulas">
+        </button>
+
+        <!-- BIBLIOTECA -->
+        <button class="zona-plano zona-biblioteca"
+                data-sector="biblioteca"
+                data-nombre="Biblioteca y Espacio Recreativo"
+                aria-label="Biblioteca y Espacio Recreativo">
+        </button>
+        <!-- BIBLIOTECA -->
+        <button class="zona-plano zona-biblioteca-recreativo"
+                data-sector="biblioteca"
+                data-nombre="Biblioteca y Espacio Recreativo"
+                aria-label="Biblioteca y Espacio Recreativo">
+        </button>
+        <!-- BIBLIOTECA -->
+        <button class="zona-plano zona-biblioteca-juegos"
+                data-sector="biblioteca"
+                data-nombre="Biblioteca y Espacio de Juegos"
+                aria-label="Biblioteca y Espacio de Juegos">
+        </button>
 
     </div>
 
 </section>
-
 
 
 
@@ -162,7 +606,7 @@
     <div class="contenedor-espacios">
 
 
-        <div class="espacio">
+        <div class="espacio" id="card-cancha">
 
             <h3>Cancha deportiva</h3>
 
@@ -174,7 +618,7 @@
 
 
 
-        <div class="espacio">
+        <div class="espacio" id="card-comedor">
 
             <h3>Comedor</h3>
 
@@ -186,7 +630,7 @@
 
 
 
-        <div class="espacio">
+        <div class="espacio" id="card-baños">
 
             <h3>Baños M/F</h3>
 
@@ -198,7 +642,7 @@
 
 
 
-        <div class="espacio">
+        <div class="espacio" id="card-preceptoria">
 
             <h3>Preceptoría</h3>
 
@@ -210,7 +654,7 @@
 
 
 
-        <div class="espacio">
+        <div class="espacio" id="card-bici">
 
             <h3>Bicicletero</h3>
 
@@ -222,7 +666,7 @@
 
 
 
-        <div class="espacio">
+        <div class="espacio" id="card-mastil">
 
             <h3>Mástil de la Bandera</h3>
 
@@ -234,7 +678,7 @@
 
 
 
-        <div class="espacio">
+        <div class="espacio" id="card-aulas">
 
             <h3>Aulas</h3>
 
@@ -246,7 +690,7 @@
 
 
 
-        <div class="espacio">
+        <div class="espacio" id="card-biblioteca">
 
             <h3>Biblioteca y Espacio Recreativo</h3>
 
@@ -259,7 +703,6 @@
 
     </div>
 
- </section>
 
 <section id="materias" class="materias">
 
